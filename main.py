@@ -79,14 +79,16 @@ def get_top_artists():
         
 
 
+app.config['SERVER_NAME'] = 'previewforflask.vercel.app'
+
 def create_spotify_oauth():
     return SpotifyOAuth(
-        #the BS from the actual api dashboard info
         client_id='a8dd8b7decf845e1b7becdc8dbb909e3',
         client_secret="c6cfafd242384321b9c4aa81b58fb5fd",
-        redirect_uri=url_for('redirect_page', _external=True),
+        redirect_uri='https://previewforflask.vercel.app/redirect',
         scope='user-top-read'
     )
+
 
  
 
